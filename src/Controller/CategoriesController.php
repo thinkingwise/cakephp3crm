@@ -61,6 +61,10 @@ class CategoriesController extends AppController
         $parentCategories = $this->Categories->ParentCategories->find('list', ['limit' => 200]);
         $this->set(compact('category', 'parentCategories'));
         $this->set('_serialize', ['category']);
+
+        // Just added the categories list to be able to choose a parent category for this new category
+        $categories = $this->Categories->find('treeList');
+        $this->set(compact('categories'));
     }
 
     /**
@@ -87,6 +91,10 @@ class CategoriesController extends AppController
         $parentCategories = $this->Categories->ParentCategories->find('list', ['limit' => 200]);
         $this->set(compact('category', 'parentCategories'));
         $this->set('_serialize', ['category']);
+
+        // Just added the categories list to be able to choose a parent category for this new category
+        $categories = $this->Categories->find('treeList');
+        $this->set(compact('categories'));
     }
 
     /**

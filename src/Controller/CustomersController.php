@@ -32,7 +32,7 @@ class CustomersController extends AppController
     public function view($id = null)
     {
         $customer = $this->Customers->get($id, [
-            'contain' => []
+            'contain' => ['Orders']
         ]);
         $this->set('customer', $customer);
         $this->set('_serialize', ['customer']);

@@ -22,5 +22,6 @@ class Category extends Entity
         'description' => true,
         'parent_category' => true,
         'child_categories' => true,
+        'products' => true,
     ];
 }

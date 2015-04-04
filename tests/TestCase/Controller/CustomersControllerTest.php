@@ -16,7 +16,14 @@ class CustomersControllerTest extends IntegrationTestCase
      * @var array
      */
     public $fixtures = [
-        'Customers' => 'app.customers'
+        'Customers' => 'app.customers',
+        'Orders' => 'app.orders',
+        'Carriers' => 'app.carriers',
+        'Users' => 'app.users',
+        'OrderItems' => 'app.order_items',
+        'Products' => 'app.products',
+        'Categories' => 'app.categories',
+        'Suppliers' => 'app.suppliers'
     ];
 
     /**

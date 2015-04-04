@@ -31,6 +31,9 @@ class ProductsTable extends Table
         $this->belongsTo('Suppliers', [
             'foreignKey' => 'supplier_id'
         ]);
+        $this->hasMany('OrderItems', [
+            'foreignKey' => 'product_id'
+        ]);
     }
 
     /**

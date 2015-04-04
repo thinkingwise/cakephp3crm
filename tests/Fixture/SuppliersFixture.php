@@ -43,8 +43,8 @@ class SuppliersFixture extends TestFixture
             'name' => 'Lorem ipsum dolor sit amet',
             'email' => 'Lorem ipsum dolor sit amet',
             'telephone' => 'Lorem ipsum dolor ',
-            'created' => '2015-04-04 07:35:45',
-            'modified' => '2015-04-04 07:35:45'
+            'created' => '2015-04-04 11:25:42',
+            'modified' => '2015-04-04 11:25:42'
         ],
     ];
 }

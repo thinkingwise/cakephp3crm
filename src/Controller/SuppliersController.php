@@ -32,7 +32,7 @@ class SuppliersController extends AppController
     public function view($id = null)
     {
         $supplier = $this->Suppliers->get($id, [
-            'contain' => []
+            'contain' => ['Products']
         ]);
         $this->set('supplier', $supplier);
         $this->set('_serialize', ['supplier']);

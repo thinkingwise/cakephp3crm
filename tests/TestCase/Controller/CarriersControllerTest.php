@@ -16,7 +16,14 @@ class CarriersControllerTest extends IntegrationTestCase
      * @var array
      */
     public $fixtures = [
-        'Carriers' => 'app.carriers'
+        'Carriers' => 'app.carriers',
+        'Orders' => 'app.orders',
+        'Customers' => 'app.customers',
+        'Users' => 'app.users',
+        'OrderItems' => 'app.order_items',
+        'Products' => 'app.products',
+        'Categories' => 'app.categories',
+        'Suppliers' => 'app.suppliers'
     ];
 
     /**

@@ -51,8 +51,8 @@ class ProductsFixture extends TestFixture
             'quantity' => 1,
             'price' => '',
             'weight' => '',
-            'created' => '2015-04-04 07:54:42',
-            'modified' => '2015-04-04 07:54:42'
+            'created' => '2015-04-04 11:34:55',
+            'modified' => '2015-04-04 11:34:55'
         ],
     ];
 }

@@ -8,6 +8,8 @@
             )
         ?></li>
         <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('List Orders'), ['controller' => 'Orders', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Order'), ['controller' => 'Orders', 'action' => 'add']) ?> </li>
     </ul>
 </div>
 <div class="users form large-10 medium-9 columns">
@@ -17,7 +19,10 @@
         <?php
             echo $this->Form->input('username');
             echo $this->Form->input('password');
-            echo $this->Form->input('role');
+            echo $this->Form->input('role', [
+                'options' => ['admin' => 'Admin', 'manager' => 'Manager']
+            ]);
+            echo $this->Form->input('name');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

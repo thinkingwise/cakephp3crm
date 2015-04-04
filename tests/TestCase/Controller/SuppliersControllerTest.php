@@ -16,7 +16,9 @@ class SuppliersControllerTest extends IntegrationTestCase
      * @var array
      */
     public $fixtures = [
-        'Suppliers' => 'app.suppliers'
+        'Suppliers' => 'app.suppliers',
+        'Products' => 'app.products',
+        'Categories' => 'app.categories'
     ];
 
     /**

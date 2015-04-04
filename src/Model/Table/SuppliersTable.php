@@ -25,6 +25,9 @@ class SuppliersTable extends Table
         $this->displayField('name');
         $this->primaryKey('id');
         $this->addBehavior('Timestamp');
+        $this->hasMany('Products', [
+            'foreignKey' => 'supplier_id'
+        ]);
     }
 
     /**

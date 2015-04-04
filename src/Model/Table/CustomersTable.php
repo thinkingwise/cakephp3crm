@@ -22,9 +22,12 @@ class CustomersTable extends Table
     public function initialize(array $config)
     {
         $this->table('customers');
-        $this->displayField('id');
+        $this->displayField('company');
         $this->primaryKey('id');
         $this->addBehavior('Timestamp');
+        $this->hasMany('Orders', [
+            'foreignKey' => 'customer_id'
+        ]);
     }
 
     /**

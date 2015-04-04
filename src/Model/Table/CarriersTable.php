@@ -24,6 +24,9 @@ class CarriersTable extends Table
         $this->table('carriers');
         $this->displayField('name');
         $this->primaryKey('id');
+        $this->hasMany('Orders', [
+            'foreignKey' => 'carrier_id'
+        ]);
     }
 
     /**

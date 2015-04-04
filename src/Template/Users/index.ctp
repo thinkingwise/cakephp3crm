@@ -2,6 +2,8 @@
     <h3><?= __('Actions') ?></h3>
     <ul class="side-nav">
         <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Orders'), ['controller' => 'Orders', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Order'), ['controller' => 'Orders', 'action' => 'add']) ?> </li>
     </ul>
 </div>
 <div class="users index large-10 medium-9 columns">
@@ -14,6 +16,7 @@
             <th><?= $this->Paginator->sort('role') ?></th>
             <th><?= $this->Paginator->sort('created') ?></th>
             <th><?= $this->Paginator->sort('modified') ?></th>
+            <th><?= $this->Paginator->sort('name') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
     </thead>
@@ -26,6 +29,7 @@
             <td><?= h($user->role) ?></td>
             <td><?= h($user->created) ?></td>
             <td><?= h($user->modified) ?></td>
+            <td><?= h($user->name) ?></td>
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>

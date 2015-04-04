@@ -18,7 +18,12 @@ class ProductsControllerTest extends IntegrationTestCase
     public $fixtures = [
         'Products' => 'app.products',
         'Categories' => 'app.categories',
-        'Suppliers' => 'app.suppliers'
+        'Suppliers' => 'app.suppliers',
+        'OrderItems' => 'app.order_items',
+        'Orders' => 'app.orders',
+        'Customers' => 'app.customers',
+        'Carriers' => 'app.carriers',
+        'Users' => 'app.users'
     ];
 
     /**

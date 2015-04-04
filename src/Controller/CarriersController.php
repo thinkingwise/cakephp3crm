@@ -32,7 +32,7 @@ class CarriersController extends AppController
     public function view($id = null)
     {
         $carrier = $this->Carriers->get($id, [
-            'contain' => []
+            'contain' => ['Orders']
         ]);
         $this->set('carrier', $carrier);
         $this->set('_serialize', ['carrier']);

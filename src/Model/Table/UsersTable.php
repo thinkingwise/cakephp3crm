@@ -22,9 +22,12 @@ class UsersTable extends Table
     public function initialize(array $config)
     {
         $this->table('users');
-        $this->displayField('id');
+        $this->displayField('name');
         $this->primaryKey('id');
         $this->addBehavior('Timestamp');
+        $this->hasMany('Orders', [
+            'foreignKey' => 'user_id'
+        ]);
     }
 
     /**
@@ -40,7 +43,8 @@ class UsersTable extends Table
             ->allowEmpty('id', 'create')
             ->allowEmpty('username')
             ->allowEmpty('password')
-            ->allowEmpty('role');
+            ->allowEmpty('role')
+            ->allowEmpty('name');
 
         return $validator;
     }

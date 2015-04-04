@@ -17,7 +17,9 @@ class CategoriesTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'Categories' => 'app.categories'
+        'Categories' => 'app.categories',
+        'Products' => 'app.products',
+        'Suppliers' => 'app.suppliers'
     ];
 
     /**

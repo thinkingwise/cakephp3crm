@@ -35,7 +35,7 @@ class ProductsController extends AppController
     public function view($id = null)
     {
         $product = $this->Products->get($id, [
-            'contain' => ['Categories', 'Suppliers']
+            'contain' => ['Categories', 'Suppliers', 'OrderItems']
         ]);
         $this->set('product', $product);
         $this->set('_serialize', ['product']);
@@ -58,7 +58,7 @@ class ProductsController extends AppController
                 $this->Flash->error('The product could not be saved. Please, try again.');
             }
         }
-        $categories = $this->Products->Categories->find('list', ['limit' => 200]);
+        $categories = $this->Products->Categories->find('treeList', ['limit' => 200]);
         $suppliers = $this->Products->Suppliers->find('list', ['limit' => 200]);
         $this->set(compact('product', 'categories', 'suppliers'));
         $this->set('_serialize', ['product']);
@@ -85,7 +85,7 @@ class ProductsController extends AppController
                 $this->Flash->error('The product could not be saved. Please, try again.');
             }
         }
-        $categories = $this->Products->Categories->find('list', ['limit' => 200]);
+        $categories = $this->Products->Categories->find('treeList', ['limit' => 200]);
         $suppliers = $this->Products->Suppliers->find('list', ['limit' => 200]);
         $this->set(compact('product', 'categories', 'suppliers'));
         $this->set('_serialize', ['product']);

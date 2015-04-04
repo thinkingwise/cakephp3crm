@@ -55,8 +55,8 @@ class CustomersFixture extends TestFixture
             'address' => 'Lorem ipsum dolor sit amet',
             'delivery_address' => 'Lorem ipsum dolor sit amet',
             'invoice_address' => 'Lorem ipsum dolor sit amet',
-            'created' => '2015-04-04 07:43:23',
-            'modified' => '2015-04-04 07:43:23'
+            'created' => '2015-04-04 11:33:29',
+            'modified' => '2015-04-04 11:33:29'
         ],
     ];
 }

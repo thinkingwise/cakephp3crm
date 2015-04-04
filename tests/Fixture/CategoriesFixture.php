@@ -47,8 +47,8 @@ class CategoriesFixture extends TestFixture
             'rght' => 1,
             'name' => 'Lorem ipsum dolor sit amet',
             'description' => 'Lorem ipsum dolor sit amet',
-            'created' => '2015-04-04 07:57:24',
-            'modified' => '2015-04-04 07:57:24'
+            'created' => '2015-04-04 11:32:12',
+            'modified' => '2015-04-04 11:32:12'
         ],
     ];
 }
