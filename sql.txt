@@ -1,0 +1,94 @@
+CREATE TABLE suppliers (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    email VARCHAR(50),
+    telephone VARCHAR(20),
+    created DATETIME DEFAULT NULL,
+    modified DATETIME DEFAULT NULL
+);
+
+CREATE TABLE customers (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(50),
+    lastname VARCHAR(50),
+    email VARCHAR(50),
+    company VARCHAR(255),
+    birthday DATE,
+    telephone VARCHAR(20),
+    address VARCHAR(255),
+    delivery_address VARCHAR(255),
+    invoice_address VARCHAR(255),
+    created DATETIME DEFAULT NULL,
+    modified DATETIME DEFAULT NULL
+);
+
+CREATE TABLE users (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50),
+    password VARCHAR(255),
+    role VARCHAR(20),
+    created DATETIME DEFAULT NULL,
+    modified DATETIME DEFAULT NULL
+);
+
+CREATE TABLE carriers (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50),
+    cost DECIMAL(4,2)
+);
+
+CREATE TABLE categories (
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	parent_id INT(10),
+	lft INT(10),
+	rght INT(10),
+	name VARCHAR(50),
+	description VARCHAR(255),
+	created DATETIME DEFAULT NULL,
+    modified DATETIME DEFAULT NULL
+);
+
+CREATE TABLE products (
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(255),
+	category_id INT(10),
+	sku VARCHAR(20),
+	supplier_id INT(10),
+	quantity INT(10) UNSIGNED,
+	price DECIMAL(4,2),
+	weight DECIMAL(4,2),
+	created DATETIME DEFAULT NULL,
+    modified DATETIME DEFAULT NULL
+);
+
+CREATE TABLE tax_rules (
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(50),
+	percent DECIMAL(4,3)
+);
+
+CREATE TABLE orders (
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	customer_id INT(10),
+	status VARCHAR(50),
+	carrier_id INT(10),
+	total_products DECIMAL(8,2),
+	total_shipping DECIMAL(8,2),
+	total_discount DECIMAL(8,2),
+	total_paid DECIMAL(8,2),
+	delivery_date DATE,
+	invoice_date DATE,
+	reference VARCHAR(50),
+	user_id INT(10),
+	created DATETIME DEFAULT NULL,
+    modified DATETIME DEFAULT NULL
+);
+
+CREATE TABLE order_items (
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	order_id INT(10),
+	product_id INT(10),
+	quantity INT(10),
+	total_products DECIMAL(8,2),
+	total_discount DECIMAL(8,2)
+);
