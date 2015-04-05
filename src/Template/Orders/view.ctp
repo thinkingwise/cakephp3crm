@@ -34,13 +34,13 @@
             <h6 class="subheader"><?= __('Id') ?></h6>
             <p><?= $this->Number->format($order->id) ?></p>
             <h6 class="subheader"><?= __('Total Products') ?></h6>
-            <p><?= $this->Number->format($order->total_products) ?></p>
+            <p><?= $this->Number->currency($order->total_products, 'AUD') ?></p>
             <h6 class="subheader"><?= __('Total Shipping') ?></h6>
-            <p><?= $this->Number->format($order->total_shipping) ?></p>
+            <p><?= $this->Number->currency($order->total_shipping, 'AUD') ?></p>
             <h6 class="subheader"><?= __('Total Discount') ?></h6>
-            <p><?= $this->Number->format($order->total_discount) ?></p>
+            <p><?= $this->Number->currency($order->total_discount, 'AUD') ?></p>
             <h6 class="subheader"><?= __('Total Paid') ?></h6>
-            <p><?= $this->Number->format($order->total_paid) ?></p>
+            <p><?= $this->Number->currency($order->total_paid, 'AUD') ?></p>
         </div>
         <div class="large-2 columns dates end">
             <h6 class="subheader"><?= __('Delivery Date') ?></h6>

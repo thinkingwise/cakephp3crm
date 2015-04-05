@@ -49,20 +49,35 @@ class OrdersController extends AppController
     public function add()
     {
         $order = $this->Orders->newEntity();
+
+        /* additional model */
+        $this->loadModel('Products'); $this->loadModel('Carriers');
+        $products = $this->Products->find('list');
+        $this->loadModel('OrderItems');
+        $orderItem = $this->OrderItems->newEntity();
+        /* end */
+
         if ($this->request->is('post')) {
             $order = $this->Orders->patchEntity($order, $this->request->data);
+            $orderItem = $this->OrderItems->patchEntity($orderItem, $this->request->data['OrderItems']);
+
             if ($this->Orders->save($order)) {
-                $this->Flash->success('The order has been saved.');
-                return $this->redirect(['action' => 'index']);
+                //assign the order id to $orderItem
+                $orderItem->order_id = $order->id;
+                if($this->OrderItems->save($orderItem)) {
+                    $this->Flash->success('The order has been saved.');
+                    return $this->redirect(['action' => 'index']);
+                }
             } else {
                 $this->Flash->error('The order could not be saved. Please, try again.');
             }
         }
         $customers = $this->Orders->Customers->find('list', ['limit' => 200]);
         $carriers = $this->Orders->Carriers->find('list', ['limit' => 200]);
+        $this->Carriers->displayField('cost');  $costcarriers = $this->Carriers->find('list');
         $users = $this->Orders->Users->find('list', ['limit' => 200]);
-        $this->set(compact('order', 'customers', 'carriers', 'users'));
-        //$this->set('_serialize', ['order']);
+        $this->set(compact('order', 'customers', 'carriers', 'users', 'products', 'orderItems', 'costcarriers'));
+        $this->set('_serialize', ['order']);
     }
 
     /**

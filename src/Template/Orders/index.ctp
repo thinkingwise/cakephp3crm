@@ -37,9 +37,12 @@
             <td>
                 <?= $order->has('carrier') ? $this->Html->link($order->carrier->name, ['controller' => 'Carriers', 'action' => 'view', $order->carrier->id]) : '' ?>
             </td>
-            <td><?= $this->Number->format($order->total_products) ?></td>
-            <td><?= $this->Number->format($order->total_shipping) ?></td>
-            <td><?= $this->Number->format($order->total_discount) ?></td>
+            <!--td><?= $this->Number->format($order->total_products) ?></td>-->
+            <td><?php echo $this->Number->currency($order->total_products, 'AUD') ?></td>
+            <!--<td><?= $this->Number->format($order->total_shipping) ?></td>-->
+            <td><?php echo $this->Number->currency($order->total_shipping, 'AUD') ?></td>
+            <!--<td><?= $this->Number->format($order->total_discount) ?></td>-->
+            <td><?php echo $this->Number->currency($order->total_discount, 'AUD') ?></td>
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['action' => 'view', $order->id]) ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $order->id]) ?>

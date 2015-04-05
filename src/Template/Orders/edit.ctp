@@ -24,7 +24,9 @@
         <legend><?= __('Edit Order') ?></legend>
         <?php
             echo $this->Form->input('customer_id', ['options' => $customers, 'empty' => true]);
-            echo $this->Form->input('status');
+            echo $this->Form->input('status', [
+                'options' => ['in_progress' => 'In Progress', 'accepted' => 'Payment Accepted', 'waiting' => 'Await for Payment', 'shipped' => 'Shipped']
+            ]);
             echo $this->Form->input('carrier_id', ['options' => $carriers, 'empty' => true]);
             echo $this->Form->input('total_products');
             echo $this->Form->input('total_shipping');
