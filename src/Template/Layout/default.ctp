@@ -29,12 +29,14 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('cake.css') ?>
 
-    <?= $this->Html->script('jquery') ?>
+    <?php // echo $this->Html->script('jquery') ?>
+    <?= $this->Html->script('jquery-1.11.2.min.js') ?>
     <?= $this->Html->script('angular.min.js') ?>
+    <?= $this->Html->script('scripts.js') ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
+    <?php // echo $this->fetch('script') ?>
 </head>
 <body>
     <header>

@@ -1,4 +1,3 @@
-<?= $this->Html->script('scripts') ?>
 <div class="actions columns large-2 medium-3">
     <h3><?= __('Actions') ?></h3>
     <ul class="side-nav">
@@ -13,7 +12,7 @@
         <li><?= $this->Html->link(__('New Order Item'), ['controller' => 'OrderItems', 'action' => 'add']) ?> </li>
     </ul>
 </div>
-<div class="orders form large-10 medium-9 columns" ng-app="myApp" ng-controller="formCtrl">
+<div class="orders form large-10 medium-9 columns">
     <?= $this->Form->create($order); ?>
     <fieldset>
         <legend><?= __('Add Order') ?></legend>
@@ -55,8 +54,19 @@
                     $this->Html->scriptEnd();
                 */
                 ?>
-                <button type="button" class="add-product"><?= __('Add product') ?></button>
             </div>
+
+            <div class='row add-row' style='display: none;'>
+                <?php echo $this->Form->hidden('OrderItems.order_id'); ?>
+                <div class='large-4 columns'>
+                    <?php echo $this->Form->input('OrderItems.product_id', ['options' => $products, 'empty' => true]); ?>
+                </div>
+                <div class='large-4 columns'>
+                    <?php echo $this->Form->input('OrderItems.quantity'); ?>
+                </div>
+            </div>
+
+            <div class="add-product"><?= __('Add product') ?></div>
 
 
     </fieldset>
