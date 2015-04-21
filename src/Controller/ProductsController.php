@@ -109,4 +109,11 @@ class ProductsController extends AppController
         }
         return $this->redirect(['action' => 'index']);
     }
+
+    public function search()
+    {
+        $this->set('products', $this->paginate($this->Products));
+        // Render the element in src/Template/Element/ajaxreturn.ctp
+        $this->render('/Element/ajaxreturn');
+    }
 }
