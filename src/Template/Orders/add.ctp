@@ -56,7 +56,7 @@
                 ?>
             </div>
 
-            <div class='row add-row' style='display: none;'>
+            <div class='row add-row'>
                 <?php echo $this->Form->hidden('OrderItems.order_id'); ?>
                 <div class='large-4 columns'>
                     <?php echo $this->Form->input('OrderItems.product_id', ['options' => $products, 'empty' => true]); ?>
@@ -66,7 +66,7 @@
                 </div>
             </div>
 
-            <div class="add-product"><?= __('Add product') ?></div>
+            <div class="add-product button"><?= __('Add product') ?></div>
 
 
     </fieldset>
